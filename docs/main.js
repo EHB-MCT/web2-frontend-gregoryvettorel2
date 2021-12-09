@@ -1,1 +1,1 @@
-console.log("script linked ok");
+window.onload=()=>{console.log("script linked ok")};
