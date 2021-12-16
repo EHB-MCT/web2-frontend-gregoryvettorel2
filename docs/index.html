@@ -3,12 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <style href="css/mainstyle.css"></style>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/mainstyle.css">
+   <script src="main.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 </head>
 <body>
-    <h1>INDEX PAGE</h1>
+    <div id="header">
+        <div class="header-content">
+            <h1 class="header-title">Coinstack</h1>
+            <button type="submit" class="searchBarButton"><i>Search</i></button>
+            <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav">
+            <div class="header-links">
+                <p class="header-link">My list</p>
+                <p class="header-link">Portfolio</p>
+            </div>
+        </div>
+    </div>
+    <!--TOP GAINERS-->
+    <h1 class="topChangeTitle">Top change</h1>
+    <div id="topChangeDiv">
+        <!--<h4 class="topChangeTitle">Last 24 hours</h4>-->
+
+
+        <div class="box1">
+            <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-128.png" class="topChangeImage"/>
+            <p class="topChangeName">Bitcoin</p>
+            <div class="inlineForChangeDiv">
+            <p class="topChangePrice">5.33424323€</p>
+            <p class="topChangeChange">+7.54%</p>
+        </div>
+        </div>
+        <div class="box1">
+            <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-128.png" class="topChangeImage"/>
+            <p>Bitcoin</p>
+            <p>5.33424323€</p>
+            <p>+7.54%</p>
+        </div>
+        <div class="box1">
+            <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-128.png" class="topChangeImage"/>
+            <p>Bitcoin</p>
+            <p>5.33424323€</p>
+            <p>+7.54%</p>
+        </div>
+
+    </div>
+
+    <!--TOP 50 COINS-->
+        <div class="top50Table" style="margin-top:10px">
+            <h1 class="top50Title">Top 50 coins</h1>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table crypto-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Symbol</th>
+                      <th scope="col">Market Cap</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Vol(24h)</th>
+                      <th scope="col">%(24h)</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="50coins">
+
+                    <tr>
+                      <td>1</td>
+                      <td><img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-128.png" /><span class="text-warning"> Bitcoin</span></td>
+                      <td>BTC</td>
+                      <td>$134.655,333</td>
+                      <td class="text-warning">$768.655</td>
+                      <td class="text-warning">$122.998</td>
+                      <td class="text-warning">$5.443.233,600</td>
+                      <td class="text-success">%5.54 <i class="fa fa-arrow-up"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+          </div>
+<br>
+
+<footer id="footer">
+<p class="nameFooter">Gregory Vettorel</p>
+<img src="css/img/ehb.png" alt="" class="logoFooter">
+</footer>
 </body>
 </html>
