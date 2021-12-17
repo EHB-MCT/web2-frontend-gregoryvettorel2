@@ -1,4 +1,12 @@
+/** FONT **/
+
+@font-face {
+    font-family: Righteous;
+    src: url(/web2-frontend-gregoryvettorel2/docs/css/font/Righteous-Regular.ttf);
+  }
+
 /** NAV **/
+
 body {
     background-color: white;
     margin: 0;
@@ -21,6 +29,7 @@ body {
 .header-title {
     color: blue;
     float: left;
+    font-family: Righteous;
 }
 
 .header-links {
@@ -71,12 +80,6 @@ body {
 
 }
 
-/**
-    .col-md-4{
-      margin-bottom:20px;
-    }
-  */
-
 .crypto-table {
     border: 1px solid lightgray;
     border-collapse: separate;
@@ -105,7 +108,7 @@ body {
     }
 
 
-/** BODY TOP CHANGE **/
+/** BODY   TOP 4 CHANGES **/
 
 #topChangeDiv {
         width: 100%;
@@ -160,6 +163,7 @@ body {
     height: 80px;
     border-top: 5px solid blue;
     background-color: white;
+    margin-top: 4%;
   }
 
 .logoFooter {
@@ -174,10 +178,3 @@ padding-right: 50px;
     padding-top: 15px;
     font-size: large;
 }
-
-/** CHART */
-
-  .chart-wrapper {
-      width: 1000px;
-      height: 600px;
-  }

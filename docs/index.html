@@ -12,21 +12,23 @@
 <body>
     <div id="header">
         <div class="header-content">
-            <h1 class="header-title">Coinstack</h1>
-            <button type="submit" class="searchBarButton"><i>Search</i></button>
-            <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav">
+            <a href="index.html"><h1 class="header-title">Coinstack</h1></a>
+            <form id="searchForm">
+            <button type="submit" class="searchBarButton"><a href="coin.html" style="color: white; text-decoration: none;" id="searchButton"><i>Search</i></a></button>
+            <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav" id="searchInputSymbol">
+            </form>
             <div class="header-links">
-                <p class="header-link">My list</p>
-                <p class="header-link">Portfolio</p>
+                <a href="myCoins.html"><p class="header-link">My list</p></a>
+                <a href="myPortfolio.html"><p class="header-link">Portfolio</p></a>
             </div>
         </div>
     </div>
     <!--TOP GAINERS-->
-    <h1 class="topChangeTitle">Top change</h1>
+    <h1 class="topChangeTitle">Top Gainers (last 24h)</h1>
     <div id="topChangeDiv">
         <!--<h4 class="topChangeTitle">Last 24 hours</h4>-->
 
-
+<!--
         <div class="box1">
             <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-128.png" class="topChangeImage"/>
             <p class="topChangeName">Bitcoin</p>
@@ -47,7 +49,7 @@
             <p>5.33424323€</p>
             <p>+7.54%</p>
         </div>
-
+      -->
     </div>
 
     <!--TOP 50 COINS-->
@@ -78,7 +80,7 @@
                       <td class="text-warning">$768.655</td>
                       <td class="text-warning">$122.998</td>
                       <td class="text-warning">$5.443.233,600</td>
-                      <td class="text-success">%5.54 <i class="fa fa-arrow-up"></i></td>
+                      <td class="text-success">%5.54<i class="fa fa-arrow-up"></i></td>
                     </tr>
                   </tbody>
                 </table>
