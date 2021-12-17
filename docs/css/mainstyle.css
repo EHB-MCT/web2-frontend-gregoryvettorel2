@@ -174,3 +174,10 @@ padding-right: 50px;
     padding-top: 15px;
     font-size: large;
 }
+
+/** CHART */
+
+  .chart-wrapper {
+      width: 1000px;
+      height: 600px;
+  }
