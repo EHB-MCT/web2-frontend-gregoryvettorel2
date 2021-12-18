@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style href="css/mainstyle.css"></style>
     <link rel="stylesheet" href="css/mainstyle.css">
-   <script src="main.js"></script>
+    <link rel="stylesheet" href="css/singleCoinPage.css">
+   <script src="/web2-frontend-gregoryvettorel2/src/searchCoin.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
@@ -23,6 +24,7 @@
             </div>
         </div>
     </div>
+    <div id="index-body">
     <!--TOP GAINERS-->
     <h1 class="topChangeTitle">Top Gainers (last 24h)</h1>
     <div id="topChangeDiv">
@@ -55,11 +57,15 @@
     <!--TOP 50 COINS-->
         <div class="top50Table" style="margin-top:10px">
             <h1 class="top50Title">Top 50 coins</h1>
+            <div id="gainersAndLosers">
+              <p id="gainers" style="color: green; font-size: 20px;">&uarr; Gainers: 12 &#8203 &#8203</p>
+              <p id="losers" style="color: red ;font-size: 20px;">&#8203	&darr;  Losers: 38</p>
+            </div>
             <div class="row">
               <div class="col-md-12">
                 <table class="table crypto-table">
                   <thead>
-                    <tr>
+                    <tr class="table-titles">
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
                       <th scope="col">Symbol</th>
@@ -88,10 +94,11 @@
           </div>
           </div>
 <br>
-
+</div>
 <footer id="footer">
 <p class="nameFooter">Gregory Vettorel</p>
 <img src="css/img/ehb.png" alt="" class="logoFooter">
 </footer>
+<script src="main.js"></script>
 </body>
 </html>

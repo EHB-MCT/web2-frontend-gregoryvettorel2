@@ -3,6 +3,9 @@
 @font-face {
     font-family: Righteous;
     src: url(/web2-frontend-gregoryvettorel2/docs/css/font/Righteous-Regular.ttf);
+
+    font-family: Roboto-Regular;
+    src: url(/web2-frontend-gregoryvettorel2/docs/css/font/Roboto-Regular.ttf)
   }
 
 /** NAV **/
@@ -37,6 +40,7 @@ body {
     text-align: center;
     padding-right: 2%;
     padding-top: 1%;
+    font-family: Roboto-Regular;
 }
 
 .header-link {
@@ -75,13 +79,32 @@ body {
 }
 
 .top50Title{
+    font-family: Roboto-Regular;
     color:black;
     font-size: 160%;
+    float:left;
 
 }
 
+.table-titles {
+    font-family: Roboto-Regular;
+}
+
+#gainersAndLosers {
+    float: right;
+    padding-right: 7%;
+    font-family: Roboto-Regular;
+}
+
+#gainers {
+float: left;
+}
+
+#losers {
+float: left;
+}
+
 .crypto-table {
-    border: 1px solid lightgray;
     border-collapse: separate;
     border-spacing: 0 1em;
     padding: 10px;
@@ -126,6 +149,7 @@ body {
     margin-right:auto;
     font-size: 160%;
     margin-top: 2%;
+    font-family: Roboto-Regular;
 }
        
 .box1 {
