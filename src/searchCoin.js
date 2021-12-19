@@ -2,8 +2,8 @@ console.log("search coin script linked");
 
 var baseUrl = "https://api.coinranking.com/v2/coins";
 var proxyUrl = "https://cors-anywhere.herokuapp.com/";
-var apiKey2 = "4f508b14-de1b-4bce-9b14-821a68f239b4";
-var apiKey = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
+var apiKey = "4f508b14-de1b-4bce-9b14-821a68f239b4";
+var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
 
 //GRAPH SHIZZLES
 async function createChart(graphData){
@@ -72,13 +72,26 @@ async function searchScript(searchSymbol) {
         changeColor += "green";
       }
       let slicedPrice = searchedCoinResult.price.slice(0,10);
-      coinPageString += `<div class="coin-info-top">
+      coinPageString += `<form action="http://localhost:3000/list" method="POST" id="form">
+      <label for="uuid"></label>
+      <input style="display:none" type="text" name="uuid" id="uuid" for="uuid" value="${searchedCoinResult.uuid}">
+      <label for="name"></label>
+      <input style="display:none" type="text" name="name" id="name" for="name" value="${searchedCoinResult.name}">
+      <label for="iconUrl"></label>
+      <input style="display:none" type="text" name="iconUrl" id="iconUrl" for="iconUrl" value="${searchedCoinResult.iconUrl}">
+      <label for="price"></label>
+      <input style="display:none" type="text" name="price" id="price" for="price" value="${slicedPrice}">
+      <label for="marketCap"></label>
+      <input style="display:none" type="text" name="marketCap" id="marketCap" for="marketCap" value="${searchedCoinResult.marketCap}">
+      
+      <!-- SHOWN HTML -->
+      <div class="coin-info-top">
       <div class="coin-info-left-div">
       <img src="${searchedCoinResult.iconUrl}" class="coin-info-img"/>
       <h2 class="coin-info-name">${searchedCoinResult.name}</h2>
       </div>
+      <input type="submit" id="addListButton" value="Add to my list">
       </div>
-      
       <div class="chart-wrapper">
           <div class="coin-info-left-chart-div">
           <p class="coin-info-price">$${searchedCoinResult.price} USD</p>
@@ -89,13 +102,13 @@ async function searchScript(searchSymbol) {
               <p class="coin-info-market">Market cap: $${searchedCoinResult.marketCap}</p>
               </div>
           <canvas id="myChart" width="200" height="200"></canvas>
-      </div>`;
-    document.getElementById("index-body").innerHTML = coinPageString;
+      </div></form>`;
+
+      document.getElementById("index-body").innerHTML = coinPageString;
   
     //CREATING THE GRAPH
     const graphData = searchedCoinResult.sparkline;
     //console.log(graphData);
-  
     createChart(graphData);
   }
 
@@ -106,5 +119,15 @@ async function searchScript(searchSymbol) {
     console.log(value);
     searchScript(value);
 }
+
+document.getElementById("form").addEventListener('submit', e => {
+  e.preventDefault();
+ 
+  let name = document.getElementById("name").value;
+  let uuid = document.getElementById("uuid").value;
+  let price = document.getElementById("price").value;
+  let iconUrl = document.getElementById("iconUrl").value;
+  let marketCap = document.getElementById("marketCap").value;
+});
 
 document.getElementById('searchForm').addEventListener('submit', searchFunction);

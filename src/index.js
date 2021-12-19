@@ -1,7 +1,9 @@
 var baseUrl = "https://api.coinranking.com/v2/coins";
 var proxyUrl = "https://cors-anywhere.herokuapp.com/";
-var apiKey2 = "4f508b14-de1b-4bce-9b14-821a68f239b4";
-var apiKey = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
+var apiKey = "4f508b14-de1b-4bce-9b14-821a68f239b4";
+var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
+
+window.searchThisCoin = searchThisCoin;
 
 //GET DATA NIZZLES
 async function getIndexData() {
@@ -78,9 +80,11 @@ async function getIndexData() {
       changeColor = "green";
       gainersCount++;
     }
+
+    var testtesttest = coin.symbol;
     //let circulating = coin.supply.circulating;
     cryptoCoin += `
-    <tr>
+    <tr onclick="searchThisCoin()">
     <td>${coin.rank}</td>
     <td><img src="${coin.iconUrl}" style="float:left;" /><span class="text-warning"> ${coin.name}</span></td>
     <td>${coin.symbol}</td>
@@ -88,8 +92,7 @@ async function getIndexData() {
     <td class="text-warning">$${coin.price}</td>
     <td class="text-warning">${coin.hVolume}</td>
     <td class="text-success" style="color: ${changeColor}; font-weight: 1000;">${coin.change} %<i class="fa fa-arrow-up"></i></td>
-  </tr>
-    `
+  </tr>`
   });
 
   let losersAndGainersString = `<p id="gainers" style="color: green; font-size: 20px;">&uarr; Gainers: ${gainersCount} &#8203 &#8203</p>
@@ -100,6 +103,7 @@ async function getIndexData() {
   document.getElementById("50coins").innerHTML = cryptoCoin;
   console.log("gainers: " +gainersCount);
   console.log("losers: " +losersCount);
+
 }
 
 let searchFunction = event => {
@@ -109,6 +113,12 @@ let searchFunction = event => {
   console.log(value);
   //window.location.href = "coin.html";
   searchScript(value);
+}
+
+function searchThisCoin() {
+  console.log("clicked");
+  console.log(this.symbol);
+  console.log(this.parent.symbol);
 }
 
 window.onload = () => {
