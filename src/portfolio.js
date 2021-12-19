@@ -14,31 +14,32 @@ async function portfolioFunction(){
     console.log(rawListData);
 
     const tableString = `<div class="top50Table" style="margin-top:10px">
-    <h1 class="top50Title">My Portfolio</h1>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table crypto-table">
-          <thead>
-            <tr class="table-titles">
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Symbol</th>
-              <th scope="col">Market Cap</th>
-              <th scope="col">Price</th>
-              <th scope="col">Vol(24h)</th>
-              <th scope="col">%(24h)</th>
-              <th scrope=""></th>
-            </tr>
-          </thead>
+  <h1 class="top50Title">My Portfolio</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table crypto-table">
+        <thead>
+          <tr class="table-titles">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Bought at</th>
+            <th scope="col">Current price</th>
+            <th scope="col">Current value</th>
+            <th scrope=""></th>
+          </tr>
+        </thead>
 
-          <tbody id="ListCoins">
-          </tbody>
-        </table>
-    </div>
+        <tbody id="ListCoins">
+        </tbody>
+      </table>
   </div>
-  </div>`
+</div>
+</div>`
 
-  document.getElementById("divForDataPortfolio").innerHTML = tableString;
+    document.getElementById("divForDataPortfolio").innerHTML = tableString;
+
 
   let finalString = "";
   for(let i = 0; i < rawListData.length; i++){
@@ -70,6 +71,39 @@ async function portfolioFunction(){
   const CoinsMyList = jsonListCall.data.coins;
 
   console.log(CoinsMyList);
+
+  let cryptoCoin = ``;
+
+  //CALCULATIONS
+  for(var i = 0; i < rawListData.length; i++){
+      let userQty = rawListData[i].Quantity;
+      let boughtPrice = rawListData[i].Price;
+      let currentPriceString = CoinsMyList[i].price;
+      let currentPrice = parseFloat(currentPriceString);
+
+      let valueInvested = userQty*boughtPrice;
+      let currentValue = userQty*currentPrice;
+      let gainForCoin = currentValue - valueInvested;
+
+      let totalGains =+ gainForCoin;
+
+      console.log(totalGains);
+
+      cryptoCoin += `
+      <tr>
+      <td>${CoinsMyList[i].rank}</td>
+      <td><img src="${CoinsMyList[i].iconUrl}" style="float:left;" /><span class="text-warning" name="name" id="nameCoin"> ${CoinsMyList[i].name}</span></td>
+      <td name="symbol" id="symbolCoin">${CoinsMyList[i].symbol}</td>
+      <td>$${userQty}</td>
+      <td>$${boughtPrice}</td>
+      <td class="text-warning">$${currentPrice}</td>
+      <td class="text-warning">${currentValue}</td>
+        </tr>
+      `
+
+      document.getElementById("ListCoins").innerHTML = cryptoCoin;
+
+  }
 }
 
 portfolioFunction();
