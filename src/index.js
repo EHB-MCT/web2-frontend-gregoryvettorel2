@@ -99,6 +99,7 @@ async function getIndexData() {
   <p id="losers" style="color: red ;font-size: 20px;">&#8203	&darr;  Losers: ${losersCount}</p>`;
 
   //For Loop Ends
+  cryptoCoin += "<br><br>";
   document.getElementById("gainersAndLosers").innerHTML = losersAndGainersString;
   document.getElementById("50coins").innerHTML = cryptoCoin;
   console.log("gainers: " +gainersCount);

@@ -27,7 +27,7 @@ async function portfolioFunction(){
             <th scope="col">Bought at</th>
             <th scope="col">Current price</th>
             <th scope="col">Current value</th>
-            <th scrope=""></th>
+            <th scrope="col">Change in $</th>
           </tr>
         </thead>
 
@@ -74,10 +74,12 @@ async function portfolioFunction(){
 
   let cryptoCoin = ``;
 
+  let totalGains = 0;
+
   //CALCULATIONS
   for(var i = 0; i < rawListData.length; i++){
-      let userQty = rawListData[i].Quantity;
-      let boughtPrice = rawListData[i].Price;
+      let userQty = rawListData[i].quantity;
+      let boughtPrice = rawListData[i].price;
       let currentPriceString = CoinsMyList[i].price;
       let currentPrice = parseFloat(currentPriceString);
 
@@ -85,7 +87,7 @@ async function portfolioFunction(){
       let currentValue = userQty*currentPrice;
       let gainForCoin = currentValue - valueInvested;
 
-      let totalGains =+ gainForCoin;
+      totalGains = totalGains + gainForCoin;
 
       console.log(totalGains);
 
@@ -93,17 +95,27 @@ async function portfolioFunction(){
       <tr>
       <td>${CoinsMyList[i].rank}</td>
       <td><img src="${CoinsMyList[i].iconUrl}" style="float:left;" /><span class="text-warning" name="name" id="nameCoin"> ${CoinsMyList[i].name}</span></td>
-      <td name="symbol" id="symbolCoin">${CoinsMyList[i].symbol}</td>
-      <td>$${userQty}</td>
-      <td>$${boughtPrice}</td>
-      <td class="text-warning">$${currentPrice}</td>
-      <td class="text-warning">${currentValue}</td>
+      <td name="symbol" id="symbolCoin"> ${CoinsMyList[i].symbol}</td>
+      <td>${userQty}</td>
+      <td>$ ${boughtPrice}</td>
+      <td class="text-warning">$ ${currentPrice}</td>
+      <td class="text-warning">$ ${currentValue}</td>
+      <td class="text-warning">$ ${gainForCoin}</td>
+      <td><input type="submit" id="${CoinsMyList[i].symbol}" name="submit" value="❌" style="background-color: white; border: none;" class="deleteBtn" onclick="deleteBtn(${CoinsMyList[i].symbol})"></td>
         </tr>
       `
 
       document.getElementById("ListCoins").innerHTML = cryptoCoin;
 
   }
+
+}
+
+async function deleteBtn(symbol){
+  console.log(symbol.id);
+  const resp = await fetch(`http://localhost:3000/portfolio/${symbol.id}`, {
+    method: "DELETE"
+  });
 }
 
 portfolioFunction();
