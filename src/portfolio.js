@@ -131,6 +131,8 @@ async function portfolioFunction(){
 
 portfolioFunction();
 
+document.getElementById("deleteBtn").addEventListener("submit", deleteBtn())
+
 async function deleteBtn(symbol){
   console.log(symbol);
   console.log(symbol.id);

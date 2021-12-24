@@ -5,16 +5,6 @@ var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
 var idUrl = "https://api.coinranking.com/v2/coins?";
 var example = "uuids[]=razxDUgYGNAdQ&uuids[]=Qwsogvtv82FCd&uuids[]=a91GCGd_u96cF";
 
-async function deleteBtn(uuid){
-  console.log(uuid.id);
-  if(!uuid.id){
-    return;
-  }
-  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
-    method: "DELETE"
-  });
- }
-
 async function getMyList(){
 
     const resp = await fetch('https://gregory-vettorel-backend.herokuapp.com/list');
@@ -67,7 +57,6 @@ async function getMyList(){
               <th scope="col">Symbol</th>
               <th scope="col">Market Cap</th>
               <th scope="col">Price</th>
-              <th scope="col">Vol(24h)</th>
               <th scope="col">%(24h)</th>
               <th scrope=""></th>
             </tr>
@@ -99,7 +88,6 @@ async function getMyList(){
         <td name="symbol" id="symbol">${CoinsMyList[x].symbol}</td>
         <td>$${CoinsMyList[x].marketCap}</td>
         <td class="text-warning">$${CoinsMyList[x].price}</td>
-        <td class="text-warning">${CoinsMyList[x].hVolume}</td>
         <td class="text-success" style="color: ${changeColor}; font-weight: 1000;">${CoinsMyList[x].change} %<i class="fa fa-arrow-up"></i></td>
         <td><input type="submit" id="${CoinsMyList[x].uuid}" name="submit" value="❌" style="background-color: white; border: none;" class="deleteBtn" onclick="deleteBtn(${CoinsMyList[x].uuid})"></td>
       </tr>
@@ -107,6 +95,17 @@ async function getMyList(){
     }
 
     document.getElementById("ListCoins").innerHTML = cryptoCoin;
+
+    //document.getElementById("deleteBtn").addEventListener("submit", deleteBtn())
+    async function deleteBtn(uuid){
+      console.log(uuid.id);
+      if(!uuid.id){
+       return;
+    }
+    const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
+      method: "DELETE"
+    });
+   }
 }
 
 getMyList();

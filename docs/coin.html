@@ -33,5 +33,14 @@
     <img src="css/img/ehb.png" alt="" class="logoFooter">
     </footer>
     <script src="searchScript.js"></script>
+    <script>
+          let searchFunction = event => {
+    event.preventDefault();
+    let value = document.getElementById('searchInputSymbol').value;
+    //document.getElementById("coin-info").innerHTML = "";
+    console.log(value);
+    searchScript(value);
+};
+    </script>
 </body>
 </html>

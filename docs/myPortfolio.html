@@ -48,5 +48,14 @@
 <footer id="footer">
     <p class="nameFooter">Gregory Vettorel</p>
     </footer>
+    <script>
+async function deleteBtn(symbol){
+  console.log(symbol);
+  console.log(symbol.id);
+  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/portfolio/${symbol.id}`, {
+    method: "DELETE"
+  });
+}
+    </script>
 </body>
 </html>

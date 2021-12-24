@@ -98,7 +98,6 @@ async function searchScript(searchSymbol) {
           <p class="coin-info-change" style="color: ${changeColor}">${searchedCoinResult.change}%</p>
           </div>
           <div class="coin-info-right-div">
-              <p cass="coin-info-volume">Volume: $${searchedCoinResult.volume}</p>
               <p class="coin-info-market">Market cap: $${searchedCoinResult.marketCap}</p>
               </div>
           <canvas id="myChart" width="200" height="200"></canvas>

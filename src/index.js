@@ -62,8 +62,6 @@ async function getIndexData() {
 
   const coins = coinsData.data.coins;
 
-  const hVolume = "24hVolume";
-
   let gainersCount = 0;
   let losersCount = 0;
 
@@ -90,7 +88,6 @@ async function getIndexData() {
     <td>${coin.symbol}</td>
     <td>$${coin.marketCap}</td>
     <td class="text-warning">$${coin.price}</td>
-    <td class="text-warning">${coin.hVolume}</td>
     <td class="text-success" style="color: ${changeColor}; font-weight: 1000;">${coin.change} %<i class="fa fa-arrow-up"></i></td>
   </tr>`
   });
@@ -113,12 +110,6 @@ let searchFunction = event => {
   console.log(value);
   //window.location.href = "coin.html";
   searchScript(value);
-}
-
-function searchThisCoin() {
-  console.log("clicked");
-  console.log(this.symbol);
-  console.log(this.parent.symbol);
 }
 
 window.onload = () => {

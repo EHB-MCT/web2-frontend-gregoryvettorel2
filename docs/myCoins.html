@@ -31,5 +31,16 @@
     </footer>
 <script src="myList.js"></script>
 <script src="index.js"></script>
+<script>
+      async function deleteBtn(uuid){
+    console.log(uuid.id);
+    if(!uuid.id){
+     return;
+  }
+  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
+    method: "DELETE"
+  });
+ }
+</script>
 </body>
 </html>
