@@ -7,14 +7,16 @@ var exampleApi = "/coins?symbols[]=BTC&symbols[]=ETH&symbols=XRP";
 
 async function portfolioFunction(){
 
-    const resp = await fetch('http://localhost:3000/portfolio');
+    const resp = await fetch('https://gregory-vettorel-backend.herokuapp.com/portfolio');
 
     const rawListData = await resp.json();
 
     console.log(rawListData);
 
+//    <h1 class="top50Title">My Portfolio</h1>
+
+
     const tableString = `<div class="top50Table" style="margin-top:10px">
-  <h1 class="top50Title">My Portfolio</h1>
   <div class="row">
     <div class="col-md-12">
       <table class="table crypto-table">
@@ -89,7 +91,9 @@ async function portfolioFunction(){
 
       totalGains = totalGains + gainForCoin;
 
-      console.log(totalGains);
+      currentPrice = currentPrice.toString().slice(0, 8);
+      currentValue = currentValue.toString().slice(0,8);
+      gainForCoin = gainForCoin.toString().slice(0,8);
 
       cryptoCoin += `
       <tr>
@@ -109,11 +113,15 @@ async function portfolioFunction(){
 
   }
 
+  console.log(totalGains);
+
+
+
 }
 
 async function deleteBtn(symbol){
   console.log(symbol.id);
-  const resp = await fetch(`http://localhost:3000/portfolio/${symbol.id}`, {
+  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/portfolio/${symbol.id}`, {
     method: "DELETE"
   });
 }

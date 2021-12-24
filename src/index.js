@@ -3,9 +3,9 @@ var proxyUrl = "https://cors-anywhere.herokuapp.com/";
 var apiKey = "4f508b14-de1b-4bce-9b14-821a68f239b4";
 var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
 
-window.searchThisCoin = searchThisCoin;
+//window.searchThisCoin = searchThisCoin;
 
-//GET DATA NIZZLES
+//GET DATA
 async function getIndexData() {
   var apiUrl = `${proxyUrl}${baseUrl}`;
   console.log(apiUrl);
@@ -104,7 +104,6 @@ async function getIndexData() {
   document.getElementById("50coins").innerHTML = cryptoCoin;
   console.log("gainers: " +gainersCount);
   console.log("losers: " +losersCount);
-
 }
 
 let searchFunction = event => {
@@ -113,7 +112,8 @@ let searchFunction = event => {
   //document.getElementById("coin-info").innerHTML = "";
   console.log(value);
   //window.location.href = "coin.html";
-  searchScript(value);
+  const newLocal = searchScript(value);
+  console.log(newLocal);
 }
 
 function searchThisCoin() {

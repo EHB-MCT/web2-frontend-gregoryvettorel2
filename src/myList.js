@@ -7,7 +7,7 @@ var example = "uuids[]=razxDUgYGNAdQ&uuids[]=Qwsogvtv82FCd&uuids[]=a91GCGd_u96cF
 
 async function getMyList(){
 
-    const resp = await fetch('http://localhost:3000/list');
+    const resp = await fetch('https://gregory-vettorel-backend.herokuapp.com/list');
 
     const rawListData = await resp.json();
 
@@ -104,7 +104,7 @@ async function deleteBtn(uuid){
   if(!uuid.id){
     return;
   }
-  const resp = await fetch(`http://localhost:3000/list/${uuid.id}`, {
+  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
     method: "DELETE"
   });
  }

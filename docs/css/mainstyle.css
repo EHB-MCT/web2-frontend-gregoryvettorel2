@@ -15,12 +15,18 @@ body {
     margin: 0;
     margin-left:auto;
     margin-right:auto;
+    font-family: Roboto-Regular;
 }
 
 #header {
     height: 70px;
     background-color: white;
     border-bottom: 5px solid blue;
+}
+
+a{
+    color:black;
+    font-weight: 500;
 }
 
 .header-content {
@@ -40,7 +46,6 @@ body {
     text-align: center;
     padding-right: 2%;
     padding-top: 1%;
-    font-family: Roboto-Regular;
 }
 
 .header-link {
@@ -79,21 +84,13 @@ body {
 }
 
 .top50Title{
-    font-family: Roboto-Regular;
     color:black;
     font-size: 160%;
-    float:left;
-
-}
-
-.table-titles {
-    font-family: Roboto-Regular;
 }
 
 #gainersAndLosers {
     float: right;
     padding-right: 7%;
-    font-family: Roboto-Regular;
 }
 
 #gainers {
@@ -148,7 +145,6 @@ float: left;
     margin-right:auto;
     font-size: 160%;
     margin-top: 2%;
-    font-family: Roboto-Regular;
 }
        
 .box1 {
@@ -203,5 +199,4 @@ padding-right: 50px;
     padding-left: 50px;
     padding-top: 2px;
     font-size: medium;
-    font-family: Roboto-Regular;
 }

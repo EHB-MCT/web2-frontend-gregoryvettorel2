@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<h1 id="headerTitlePortfolio">Add coints to your portfolio:</h1>
 <div class="formForData">
+<h1 id="headerTitlePortfolio">Add coints to your portfolio:</h1>
     <form action="http://localhost:3000/portfolio" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="" placeholder="Ex. Bitcoin"><br><br>
@@ -34,6 +34,11 @@
         <input type="text" id="price" name="price" value="" placeholder="Ex. 12874"><br><br>
         <input type="submit" value="Submit" id="submit">
       </form> 
+
+</div>
+<div class="changeOverview">
+<h2 style="color: green" class="changeTitle">TOTAL VALUE: 154000 €</h2>
+<h2 style="color: green" class="changeTitle">CHANGE PERCENTAGE: 78%</h2>
 </div>
 <div id="divForDataPortfolio">
 
@@ -42,7 +47,7 @@
 <footer id="footer">
     <p class="nameFooter">Gregory Vettorel</p>
     </footer>
-<script src="/web2-frontend-gregoryvettorel2/src/portfolio.js"></script>
-<script src="main.js"></script>
+<script src="./portfolio.js"></script>
+<script src="./index.js"></script>
 </body>
 </html>

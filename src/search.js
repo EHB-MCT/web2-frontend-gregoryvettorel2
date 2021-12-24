@@ -5,7 +5,7 @@ var proxyUrl = "https://cors-anywhere.herokuapp.com/";
 var apiKey = "4f508b14-de1b-4bce-9b14-821a68f239b4";
 var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
 
-//GRAPH SHIZZLES
+//GRAPH
 async function createChart(graphData){
     console.log("chart generated.");
     const ctx = await document.getElementById('myChart').getContext('2d');
@@ -35,9 +35,9 @@ async function createChart(graphData){
             }
         }
     });
-    }
+    };
 
-//SEARCH FIZZLES
+//SEARCH
 async function searchScript(searchSymbol) {
     var url = `${proxyUrl}${baseUrl}?symbols[]=${searchSymbol}`;
   
@@ -72,7 +72,7 @@ async function searchScript(searchSymbol) {
         changeColor += "green";
       }
       let slicedPrice = searchedCoinResult.price.slice(0,10);
-      coinPageString += `<form action="http://localhost:3000/list" method="POST" id="form">
+      coinPageString += `<form action="https://gregory-vettorel-backend.herokuapp.com/list" method="POST" id="form">
       <label for="uuid"></label>
       <input style="display:none" type="text" name="uuid" id="uuid" for="uuid" value="${searchedCoinResult.uuid}">
       <label for="name"></label>
@@ -110,7 +110,7 @@ async function searchScript(searchSymbol) {
     const graphData = searchedCoinResult.sparkline;
     //console.log(graphData);
     createChart(graphData);
-  }
+  };
 
   let searchFunction = event => {
     event.preventDefault();
@@ -118,7 +118,7 @@ async function searchScript(searchSymbol) {
     //document.getElementById("coin-info").innerHTML = "";
     console.log(value);
     searchScript(value);
-}
+};
 
 document.getElementById("form").addEventListener('submit', e => {
   e.preventDefault();
