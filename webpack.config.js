@@ -1,8 +1,8 @@
 const path = require('path');
 module.exports = {
     entry: {
-      index: './src/index.js',
       searchScript: './src/search.js',
+      index: './src/index.js',
       portfolio: './src/portfolio.js',
       myList: './src/myList.js'
     },

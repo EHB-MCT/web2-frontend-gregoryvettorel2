@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/mainstyle.css">
+    <script src="./portfolio.js"></script>
+    <script src="./index.js"></script>
     <link rel="stylesheet" href="css/portfolio.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +15,7 @@
     <div class="header-content">
         <a href="index.html"><h1 class="header-title">Coinstack</h1></a>
         <button type="submit" class="searchBarButton"><a href="coin.html" style="color: white; text-decoration: none;"><i>Search</i></a></button>
-        <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav">
+        <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav" onclick="location.href='index.html'">
         <div class="header-links">
             <a href="myCoins.html"><p class="header-link">My list</p></a>
             <a href="myPortfolio.html"><p class="header-link">Portfolio</p></a>
@@ -23,7 +25,7 @@
 
 <div class="formForData">
 <h1 id="headerTitlePortfolio">Add coints to your portfolio:</h1>
-    <form action="http://localhost:3000/portfolio" method="POST">
+    <form action="https://gregory-vettorel-backend.herokuapp.com/portfolio" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="" placeholder="Ex. Bitcoin"><br><br>
         <label for="symbol">Symbol:</label><br>
@@ -47,7 +49,5 @@
 <footer id="footer">
     <p class="nameFooter">Gregory Vettorel</p>
     </footer>
-<script src="./portfolio.js"></script>
-<script src="./index.js"></script>
 </body>
 </html>

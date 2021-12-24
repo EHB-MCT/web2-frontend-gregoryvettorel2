@@ -5,6 +5,16 @@ var apiKey2 = "55a006ab-f2d6-4c80-8708-72443e9abc6d";
 var idUrl = "https://api.coinranking.com/v2/coins?";
 var example = "uuids[]=razxDUgYGNAdQ&uuids[]=Qwsogvtv82FCd&uuids[]=a91GCGd_u96cF";
 
+async function deleteBtn(uuid){
+  console.log(uuid.id);
+  if(!uuid.id){
+    return;
+  }
+  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
+    method: "DELETE"
+  });
+ }
+
 async function getMyList(){
 
     const resp = await fetch('https://gregory-vettorel-backend.herokuapp.com/list');
@@ -98,15 +108,5 @@ async function getMyList(){
 
     document.getElementById("ListCoins").innerHTML = cryptoCoin;
 }
-
-async function deleteBtn(uuid){
-  console.log(uuid.id);
-  if(!uuid.id){
-    return;
-  }
-  const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/list/${uuid.id}`, {
-    method: "DELETE"
-  });
- }
 
 getMyList();

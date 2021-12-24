@@ -119,11 +119,12 @@ async function portfolioFunction(){
 
 }
 
+portfolioFunction();
+
 async function deleteBtn(symbol){
+  console.log(symbol);
   console.log(symbol.id);
   const resp = await fetch(`https://gregory-vettorel-backend.herokuapp.com/portfolio/${symbol.id}`, {
     method: "DELETE"
   });
 }
-
-portfolioFunction();

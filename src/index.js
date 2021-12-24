@@ -112,8 +112,7 @@ let searchFunction = event => {
   //document.getElementById("coin-info").innerHTML = "";
   console.log(value);
   //window.location.href = "coin.html";
-  const newLocal = searchScript(value);
-  console.log(newLocal);
+  searchScript(value);
 }
 
 function searchThisCoin() {
