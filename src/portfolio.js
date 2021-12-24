@@ -78,6 +78,8 @@ async function portfolioFunction(){
 
   let totalGains = 0;
 
+  let = totalValueInvested = 0;
+
   //CALCULATIONS
   for(var i = 0; i < rawListData.length; i++){
       let userQty = rawListData[i].quantity;
@@ -89,6 +91,7 @@ async function portfolioFunction(){
       let currentValue = userQty*currentPrice;
       let gainForCoin = currentValue - valueInvested;
 
+      totalValueInvested = totalValueInvested + valueInvested;
       totalGains = totalGains + gainForCoin;
 
       currentPrice = currentPrice.toString().slice(0, 8);
@@ -112,10 +115,17 @@ async function portfolioFunction(){
       document.getElementById("ListCoins").innerHTML = cryptoCoin;
 
   }
+  let changePercentage = totalValueInvested/totalGains*100;
+  let color = "";
+  if(totalGains > 0){
+    color = "green";
+  }
+  let totalGainsString = `<h2 style="color: ${color}" class="changeTitle">TOTAL VALUE: ${totalGains}</h2>
+  <h2 style="color: ${color}" class="changeTitle">CHANGE PERCENTAGE: ${changePercentage}%</h2>`
 
   console.log(totalGains);
 
-
+  document.getElementById("changeOverview").innerHTML = totalGainsString;
 
 }
 
