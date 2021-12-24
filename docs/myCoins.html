@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="myList.js"></script>
     <script src="index.js"></script>
+    <script src="searchScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
     <title>Index</title>
 </head>
@@ -14,7 +15,7 @@
     <div class="header-content">
         <a href="index.html"><h1 class="header-title">Coinstack</h1></a>
         <button type="submit" class="searchBarButton"><a href="coin.html" style="color: white; text-decoration: none;"><i>Search</i></a></button>
-        <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav" onclick="location.href='index.html'">
+        <input type="text" placeholder="BTC, ETH, XRP, ..." name="search" class="searchBarNav" id="searchInputSymbol"  onclick="location.href='index.html'">
         <div class="header-links">
             <a href="myCoins.html"><p class="header-link">My list</p></a>
             <a href="myPortfolio.html"><p class="header-link">Portfolio</p></a>

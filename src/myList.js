@@ -108,4 +108,11 @@ async function getMyList(){
    }
 }
 
+let searchFunction = event => {
+  event.preventDefault();
+  let value = document.getElementById('searchInputSymbol').value;
+  console.log(value);
+  searchScript(value);
+};
+
 getMyList();

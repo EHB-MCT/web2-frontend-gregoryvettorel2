@@ -140,3 +140,10 @@ async function deleteBtn(symbol){
     method: "DELETE"
   });
 }
+
+let searchFunction = event => {
+  event.preventDefault();
+  let value = document.getElementById('searchInputSymbol').value;
+  console.log(value);
+  searchScript(value);
+};

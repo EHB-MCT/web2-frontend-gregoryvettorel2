@@ -106,16 +106,13 @@ async function getIndexData() {
 let searchFunction = event => {
   event.preventDefault();
   let value = document.getElementById('searchInputSymbol').value;
-  //document.getElementById("coin-info").innerHTML = "";
   console.log(value);
-  //window.location.href = "coin.html";
   searchScript(value);
 }
 
 window.onload = () => {
 
-document.getElementById('searchForm').addEventListener('submit', searchFunction);
-
+  document.getElementById('searchForm').addEventListener('submit', searchFunction);
 //Calling functions
 getIndexData();
 }

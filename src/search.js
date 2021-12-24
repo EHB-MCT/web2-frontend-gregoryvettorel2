@@ -36,9 +36,10 @@ async function createChart(graphData){
         }
     });
     };
-
+  
 //SEARCH
 async function searchScript(searchSymbol) {
+
     var url = `${proxyUrl}${baseUrl}?symbols[]=${searchSymbol}`;
   
     const resp = await fetch(`${url}`, {
@@ -111,10 +112,9 @@ async function searchScript(searchSymbol) {
     createChart(graphData);
   };
 
-  let searchFunction = event => {
+let searchFunction = event => {
     event.preventDefault();
     let value = document.getElementById('searchInputSymbol').value;
-    //document.getElementById("coin-info").innerHTML = "";
     console.log(value);
     searchScript(value);
 };
