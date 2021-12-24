@@ -22,6 +22,8 @@ body {
     height: 70px;
     background-color: white;
     border-bottom: 5px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 a{
@@ -33,6 +35,8 @@ a{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    font-family: Roboto-Regular;
+
 }
 
 .header-title {
@@ -46,6 +50,8 @@ a{
     text-align: center;
     padding-right: 2%;
     padding-top: 1%;
+    font-family: Roboto-Regular;
+
 }
 
 .header-link {
@@ -81,11 +87,15 @@ a{
     width: 65%;
     margin-left: auto;
     margin-right:auto;
+    font-family: Roboto-Regular;
+
 }
 
 .top50Title{
     color:black;
     font-size: 160%;
+    font-family: Roboto-Regular;
+
 }
 
 #gainersAndLosers {
@@ -110,6 +120,8 @@ float: left;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: Roboto-Regular;
+
     }
     tbody tr {
       background: #fff;
@@ -136,6 +148,8 @@ float: left;
         margin-right: auto;
         text-align: center;
         margin-bottom: 5%;
+        font-family: Roboto-Regular;
+
 }
 
 .topChangeTitle {
@@ -145,6 +159,8 @@ float: left;
     margin-right:auto;
     font-size: 160%;
     margin-top: 2%;
+    font-family: Roboto-Regular;
+
 }
        
 .box1 {

@@ -8,6 +8,8 @@ body {
     border-radius: 5px;
     float: left;
     margin-left: -5%;
+    font-family: Roboto-Regular;
+
 }
 
 #headerTitlePortfolio{
@@ -30,6 +32,8 @@ label {
     height: 30px;
     border-radius: 8px;
     border: 2px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 #symbol {
@@ -37,6 +41,8 @@ label {
     height: 30px;
     border-radius: 8px;
     border: 2px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 #quantity {
@@ -44,6 +50,8 @@ label {
     height: 30px;
     border-radius: 8px;
     border: 2px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 #price {
@@ -51,6 +59,8 @@ label {
     height: 30px;
     border-radius: 8px;
     border: 2px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 #submit {
@@ -58,6 +68,8 @@ label {
     height: 30px;
     border-radius: 8px;
     border: 2px solid blue;
+    font-family: Roboto-Regular;
+
 }
 
 .changeOverview {
@@ -68,6 +80,7 @@ label {
     margin-right: 22%;
     margin-top: 7%;
     text-align: center;
+    font-family: Roboto-Regular;
     
 }
 
@@ -78,4 +91,5 @@ label {
 
 #divForDataPortfolio{
     margin-top: 5%;
+    font-family: Roboto-Regular;
 }
